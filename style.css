@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f8fc;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --accent: #155e75;
+  --accent-soft: #e0f2fe;
+  --border: #cbd5e1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #eff6ff 0%, var(--bg) 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.site-header,
+.section,
+.site-footer,
+.placeholder-page {
+  width: min(960px, 92vw);
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 3.5rem 0 1.5rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(2, 6, 23, 0.05);
+}
+
+.card-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--accent-soft);
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(21, 94, 117, 0.15);
+}
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 0 3rem;
+}
+
+.placeholder-page {
+  margin-top: 4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(2, 6, 23, 0.05);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  text-decoration: underline;
+}
+
+.resource-links {
+  padding-left: 1.25rem;
+}
+
+.resource-links a {
+  color: var(--accent);
+  font-weight: 700;
+}
