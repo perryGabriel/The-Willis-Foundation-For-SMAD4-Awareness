@@ -2,6 +2,8 @@
 
 This repository contains a static website for sharing awareness information, family stories, practical resources, and long-term foundation plans related to SMAD4-associated conditions.
 
+The site can be viewed [here](https://perrygabriel.github.io/The-Willis-Foundation-For-SMAD4-Awareness/index.html).
+
 ## Where the live site content is managed
 
 Use the `doc/` directory as the main website source.
