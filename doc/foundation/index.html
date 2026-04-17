@@ -9,12 +9,23 @@
   <body>
     <main class="placeholder-page">
       <h1>Foundation Information</h1>
-      <p>This page is under construction.</p>
       <p>
-        Future updates will explain how the foundation may help with insurance, copays,
-        deductibles, funerals, and IVF.
+        Add foundation updates, legal milestones, and planning notes in
+        <code>doc/content/foundation/cards/</code>.
       </p>
+
+      <section
+        class="dynamic-card-section"
+        data-card-section
+        data-cards-path="../content/foundation/cards"
+      >
+        <h2>Foundation Cards</h2>
+        <p class="dynamic-card-status" data-card-status>Loading cards…</p>
+        <div class="content-card-grid" data-card-grid></div>
+      </section>
+
       <a class="back-link" href="../index.html">← Back to Home</a>
     </main>
+    <script src="../assets/cards.js" defer></script>
   </body>
 </html>
