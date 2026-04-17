@@ -1,3 +1,7 @@
 {
-  "cards": ["family-support-fund.json"]
+  "cards": [
+    "family-support-fund.json",
+    "vivica-gofundme.json",
+    "chari-gofundme.json"
+  ]
 }

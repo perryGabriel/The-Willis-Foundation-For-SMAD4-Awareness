@@ -1,9 +1,12 @@
 {
   "title": "SMAD4 Glossary (PDF)",
   "description": "Glossary of key terms used across the site and reference materials.",
-  "url": "Glossary.pdf",
+  "url": "/Glossary.pdf",
   "source": "Willis Foundation Project",
   "type": "reference",
   "external": false,
-  "tags": ["pdf", "definitions"]
+  "tags": [
+    "pdf",
+    "definitions"
+  ]
 }

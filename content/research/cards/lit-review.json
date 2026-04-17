@@ -1,9 +1,12 @@
 {
   "title": "SMAD4 Literature Review (PDF)",
   "description": "Project literature review document for the current phase of research organization.",
-  "url": "ChatGPT_Lit_Review.pdf",
+  "url": "/ChatGPT_Lit_Review.pdf",
   "source": "Willis Foundation Project",
   "type": "paper",
   "external": false,
-  "tags": ["pdf", "literature-review"]
+  "tags": [
+    "pdf",
+    "literature-review"
+  ]
 }
