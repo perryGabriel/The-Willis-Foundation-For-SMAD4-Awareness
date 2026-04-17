@@ -117,3 +117,80 @@ h3 {
   color: var(--accent);
   font-weight: 700;
 }
+
+.dynamic-card-section {
+  margin-top: 2rem;
+}
+
+.dynamic-card-status {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.content-card-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.content-card {
+  background: #f8fbff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.content-card-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.content-card-title a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.content-card-title a:hover,
+.content-card-title a:focus-visible {
+  text-decoration: underline;
+}
+
+.content-card-description {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+}
+
+.content-card-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.card-chip {
+  display: inline-block;
+  border: 1px solid #94a3b8;
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  background: #f1f5f9;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: capitalize;
+}
+
+.card-tag-list {
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.card-tag {
+  background: #dbeafe;
+  color: #1e3a8a;
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.78rem;
+}

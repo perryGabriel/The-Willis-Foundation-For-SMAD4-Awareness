@@ -9,20 +9,23 @@
   <body>
     <main class="placeholder-page">
       <h1>Donation & Fundraising</h1>
-      <p>This page is under construction.</p>
       <p>
-        We are beginning to organize support options for family medical expenses and related
-        needs.
+        Add and update donation links by editing files in
+        <code>doc/content/donation/cards/</code>.
       </p>
-      <h2>Current Fundraiser</h2>
-      <ul class="resource-links">
-        <li>
-          <a href="https://gofund.me/e8a2252f7" target="_blank" rel="noopener noreferrer"
-            >GoFundMe: Family Support Fund</a
-          >
-        </li>
-      </ul>
+
+      <section
+        class="dynamic-card-section"
+        data-card-section
+        data-cards-path="../content/donation/cards"
+      >
+        <h2>Donation Cards</h2>
+        <p class="dynamic-card-status" data-card-status>Loading cards…</p>
+        <div class="content-card-grid" data-card-grid></div>
+      </section>
+
       <a class="back-link" href="../index.html">← Back to Home</a>
     </main>
+    <script src="../assets/cards.js" defer></script>
   </body>
 </html>
