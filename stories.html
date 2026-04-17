@@ -9,11 +9,19 @@
   <body>
     <main class="placeholder-page">
       <h1>Stories, Blogs, & Memorials</h1>
-      <p>This page is under construction.</p>
       <p>
-        Future updates will include personal blogs, success stories, and memorial spaces.
+        Add personal stories, blog links, and memorial entries in
+        <code>content/stories/cards/</code>.
       </p>
+
+      <section class="dynamic-card-section" data-card-section data-cards-path="content/stories/cards">
+        <h2>Story & Blog Cards</h2>
+        <p class="dynamic-card-status" data-card-status>Loading cards…</p>
+        <div class="content-card-grid" data-card-grid></div>
+      </section>
+
       <a class="back-link" href="index.html">← Back to Home</a>
     </main>
+    <script src="cards.js" defer></script>
   </body>
 </html>

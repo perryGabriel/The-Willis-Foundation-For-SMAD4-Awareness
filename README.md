@@ -2,43 +2,23 @@
 
 This repository contains a static website for sharing awareness information, family stories, practical resources, and long-term foundation plans related to SMAD4-associated conditions.
 
-The site can be viewed [here](https://perrygabriel.github.io/The-Willis-Foundation-For-SMAD4-Awareness/index.html).
+## Important: where to edit cards for the live site
 
-## Where the live site content is managed
+The currently hosted site uses the **root HTML pages** (`index.html`, `donation.html`, etc.).
 
-Use the `doc/` directory as the main website source.
+To add cards that appear on the live pages, edit:
 
-```text
-/
-├── doc/
-│   ├── index.html
-│   ├── assets/
-│   │   ├── style.css
-│   │   └── cards.js                 # Dynamic card renderer
-│   ├── content/                     # Card data (easy-to-edit JSON)
-│   │   ├── donation/cards/
-│   │   ├── stories/cards/
-│   │   ├── research/cards/
-│   │   ├── resources/cards/
-│   │   └── foundation/cards/
-│   ├── donation/index.html
-│   ├── stories/index.html
-│   ├── research/index.html
-│   ├── resources/index.html
-│   └── foundation/index.html
-├── ChatGPT_Lit_Review.pdf
-└── Glossary.pdf
-```
+- `content/donation/cards/`
+- `content/stories/cards/`
+- `content/research/cards/`
+- `content/resources/cards/`
+- `content/foundation/cards/`
+
+> Note: there is also a `doc/` copy of the site for docs/reference. If you want both versions to stay in sync, mirror your content changes there too.
 
 ## Card system (how content is added)
 
-Each page loads cards from its matching folder:
-
-- Donation page → `doc/content/donation/cards/`
-- Stories page → `doc/content/stories/cards/`
-- Research page → `doc/content/research/cards/`
-- Resources page → `doc/content/resources/cards/`
-- Foundation page → `doc/content/foundation/cards/`
+Each page loads cards from its matching folder above.
 
 Inside each `cards/` folder:
 
@@ -83,7 +63,7 @@ Inside each `cards/` folder:
 
 ## How to add a new entry to any page
 
-1. Open the correct folder in `doc/content/<page>/cards/`.
+1. Open the correct folder in `content/<page>/cards/`.
 2. Create a new JSON file (example: `my-new-resource.json`) by copying an existing card.
 3. Fill in the fields (`title`, `description`, `url`, etc.).
 4. Edit `index.json` in the same folder and add your new filename to the `cards` array.
@@ -101,7 +81,7 @@ python -m http.server 4173
 
 Then open:
 
-- `http://localhost:4173/doc/`
+- `http://localhost:4173/index.html`
 
 > Note: Cards are loaded with `fetch()`, so open the site through a local server (not via direct `file://` paths).
 
