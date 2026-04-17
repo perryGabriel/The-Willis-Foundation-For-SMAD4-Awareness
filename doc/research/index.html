@@ -10,43 +10,22 @@
     <main class="placeholder-page">
       <h1>Research & Literature Review</h1>
       <p>
-        This section is actively being assembled. For now, you can access the first project
-        research materials and background references below.
+        Add studies, papers, and summaries by placing JSON files in
+        <code>doc/content/research/cards/</code>.
       </p>
 
-      <h2>Project Documents</h2>
-      <ul class="resource-links">
-        <li><a href="../../ChatGPT_Lit_Review.pdf">SMAD4 Literature Review (PDF)</a></li>
-        <li><a href="../../Glossary.pdf">SMAD4 Glossary (PDF)</a></li>
-      </ul>
+      <section
+        class="dynamic-card-section"
+        data-card-section
+        data-cards-path="../content/research/cards"
+      >
+        <h2>Research Cards</h2>
+        <p class="dynamic-card-status" data-card-status>Loading cards…</p>
+        <div class="content-card-grid" data-card-grid></div>
+      </section>
 
-      <h2>Wikipedia Background Links</h2>
-      <ul class="resource-links">
-        <li>
-          <a href="https://en.wikipedia.org/wiki/SMAD4" target="_blank" rel="noopener noreferrer"
-            >SMAD4 gene</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://en.wikipedia.org/wiki/Juvenile_polyposis_syndrome"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Juvenile polyposis syndrome</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://en.wikipedia.org/wiki/Hereditary_hemorrhagic_telangiectasia"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Hereditary hemorrhagic telangiectasia</a
-          >
-        </li>
-      </ul>
-
-      <p>Additional research links and summaries are under construction.</p>
       <a class="back-link" href="../index.html">← Back to Home</a>
     </main>
+    <script src="../assets/cards.js" defer></script>
   </body>
 </html>

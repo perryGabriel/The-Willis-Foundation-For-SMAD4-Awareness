@@ -10,15 +10,18 @@
     <main class="placeholder-page">
       <h1>Research & Literature Review</h1>
       <p>
-        This section is actively being assembled. For now, you can access the first project
-        research materials below.
+        Add studies, papers, and summaries by placing JSON files in
+        <code>content/research/cards/</code>.
       </p>
-      <ul class="resource-links">
-        <li><a href="ChatGPT_Lit_Review.pdf">SMAD4 Literature Review (PDF)</a></li>
-        <li><a href="Glossary.pdf">SMAD4 Glossary (PDF)</a></li>
-      </ul>
-      <p>Additional research links and summaries are under construction.</p>
+
+      <section class="dynamic-card-section" data-card-section data-cards-path="content/research/cards">
+        <h2>Research Cards</h2>
+        <p class="dynamic-card-status" data-card-status>Loading cards…</p>
+        <div class="content-card-grid" data-card-grid></div>
+      </section>
+
       <a class="back-link" href="index.html">← Back to Home</a>
     </main>
+    <script src="cards.js" defer></script>
   </body>
 </html>
