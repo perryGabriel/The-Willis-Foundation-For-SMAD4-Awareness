@@ -62,6 +62,32 @@
     return article;
   }
 
+
+  async function resourceExists(path) {
+    try {
+      const response = await fetch(path, { method: 'HEAD' });
+      return response.ok;
+    } catch (error) {
+      console.warn(`Unable to check favicon path: ${path}`, error);
+      return false;
+    }
+  }
+
+  async function configureFavicon() {
+    const preferredIcon = 'favicon-custom.png';
+    const fallbackIcon = 'favicon-default.svg';
+    const iconPath = (await resourceExists(preferredIcon)) ? preferredIcon : fallbackIcon;
+
+    let iconLink = document.querySelector('link[rel~="icon"]');
+    if (!iconLink) {
+      iconLink = document.createElement('link');
+      iconLink.rel = 'icon';
+      document.head.appendChild(iconLink);
+    }
+
+    iconLink.href = iconPath;
+  }
+
   async function loadCards(section) {
     const cardsPath = section.dataset.cardsPath;
     const indexFile = section.dataset.indexFile || 'index.json';
@@ -107,6 +133,8 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
+    configureFavicon();
+
     const sections = document.querySelectorAll('[data-card-section]');
     sections.forEach(loadCards);
   });
