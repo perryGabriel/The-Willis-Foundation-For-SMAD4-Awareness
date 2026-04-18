@@ -90,3 +90,25 @@ Then open:
 - Keep language respectful and family-centered.
 - Prefer plain HTML/CSS/JSON for easy maintenance by non-technical contributors.
 - Keep each card description concise and easy to scan.
+
+
+## Browser tab icon (favicon)
+
+The site now checks for a custom favicon file on load:
+
+- Preferred file: `favicon-custom.png`
+- Fallback file: `favicon-default.svg` (already included in this repo)
+
+### Add your own icon
+
+1. Create or export your icon as a PNG file.
+2. Save it at the repository root as `favicon-custom.png`.
+3. Commit and push — the site will use it automatically.
+
+### Update the fallback icon
+
+If you want to change the built-in default, replace `favicon-default.svg` with your updated SVG.
+
+### Remove the custom icon
+
+Delete `favicon-custom.png` and the site will automatically fall back to `favicon-default.svg`.
