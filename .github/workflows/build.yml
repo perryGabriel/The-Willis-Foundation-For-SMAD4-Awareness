@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - work
+  pull_request:
+
+jobs:
+  validate-and-package:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Validate card JSON files
+        run: |
+          python -m json.tool content/donation/cards/index.json > /dev/null
+          python -m json.tool content/foundation/cards/index.json > /dev/null
+          python -m json.tool content/research/cards/index.json > /dev/null
+          python -m json.tool content/resources/cards/index.json > /dev/null
+          python -m json.tool content/stories/cards/index.json > /dev/null
+
+      - name: Create site bundle
+        run: |
+          mkdir -p dist
+          tar -czf dist/site.tar.gz \
+            index.html foundation.html research.html donation.html stories.html resources.html \
+            style.css cards.js \
+            content doc
+
+      - name: Upload bundle artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: static-site-bundle
+          path: dist/site.tar.gz
