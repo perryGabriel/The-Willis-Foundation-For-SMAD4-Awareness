@@ -194,3 +194,30 @@ h3 {
   padding: 0.1rem 0.55rem;
   font-size: 0.78rem;
 }
+
+.card-category {
+  margin-top: 1.5rem;
+}
+
+.card-category-title {
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.15rem;
+}
+
+.card-subcategory {
+  margin-top: 1rem;
+}
+
+.card-subcategory-title {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.card-subcategory .content-card-grid,
+.card-category > .content-card-grid {
+  margin-top: 0;
+}

@@ -62,6 +62,80 @@
     return article;
   }
 
+  function createSubcategoryBlock(title, cards) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'card-subcategory';
+
+    const heading = document.createElement('h4');
+    heading.className = 'card-subcategory-title';
+    heading.textContent = title;
+    wrapper.appendChild(heading);
+
+    const grid = document.createElement('div');
+    grid.className = 'content-card-grid';
+    cards.forEach((card) => grid.appendChild(createCard(card)));
+    wrapper.appendChild(grid);
+
+    return wrapper;
+  }
+
+  function renderGroupedCards(container, cards) {
+    const hasCategory = cards.some((card) => typeof card.category === 'string' && card.category.trim().length > 0);
+
+    if (!hasCategory) {
+      cards.forEach((card) => container.appendChild(createCard(card)));
+      return;
+    }
+
+    const categories = new Map();
+
+    for (const card of cards) {
+      const category = typeof card.category === 'string' && card.category.trim().length > 0 ? card.category.trim() : 'Other';
+      if (!categories.has(category)) {
+        categories.set(category, []);
+      }
+      categories.get(category).push(card);
+    }
+
+    for (const [category, categoryCards] of categories) {
+      const section = document.createElement('section');
+      section.className = 'card-category';
+
+      const heading = document.createElement('h3');
+      heading.className = 'card-category-title';
+      heading.textContent = category;
+      section.appendChild(heading);
+
+      const hasSubcategory = categoryCards.some(
+        (card) => typeof card.subcategory === 'string' && card.subcategory.trim().length > 0
+      );
+
+      if (!hasSubcategory) {
+        const grid = document.createElement('div');
+        grid.className = 'content-card-grid';
+        categoryCards.forEach((card) => grid.appendChild(createCard(card)));
+        section.appendChild(grid);
+      } else {
+        const subcategories = new Map();
+        for (const card of categoryCards) {
+          const subcategory =
+            typeof card.subcategory === 'string' && card.subcategory.trim().length > 0
+              ? card.subcategory.trim()
+              : 'Other';
+          if (!subcategories.has(subcategory)) {
+            subcategories.set(subcategory, []);
+          }
+          subcategories.get(subcategory).push(card);
+        }
+
+        for (const [subcategory, subcategoryCards] of subcategories) {
+          section.appendChild(createSubcategoryBlock(subcategory, subcategoryCards));
+        }
+      }
+
+      container.appendChild(section);
+    }
+  }
 
   async function resourceExists(path) {
     try {
@@ -121,9 +195,7 @@
       );
 
       if (status) status.remove();
-      for (const card of cards) {
-        grid.appendChild(createCard(card));
-      }
+      renderGroupedCards(grid, cards);
     } catch (error) {
       if (status) {
         status.textContent = 'Could not load cards. Confirm paths and run this site from a local web server.';

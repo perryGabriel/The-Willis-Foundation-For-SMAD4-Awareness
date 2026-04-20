@@ -1,0 +1,10 @@
+{
+  "title": "Example: Dr. Carlos Ruiz",
+  "description": "Sample Arizona recommendation for advanced endoscopy and scope-based procedures.",
+  "url": "",
+  "source": "Community Example",
+  "type": "doctor recommendation",
+  "category": "Arizona (AZ)",
+  "subcategory": "Scopes",
+  "tags": ["doctor", "az", "scopes", "example"]
+}

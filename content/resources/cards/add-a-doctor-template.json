@@ -4,5 +4,7 @@
   "url": "",
   "source": "Site Template",
   "type": "doctor recommendation",
+  "category": "Utah (UT)",
+  "subcategory": "HHT",
   "tags": ["template", "doctor", "resource"]
 }
