@@ -1,0 +1,10 @@
+{
+  "title": "Example: Dr. Jane Smith",
+  "description": "Sample Utah recommendation focused on hereditary hemorrhagic telangiectasia (HHT) care.",
+  "url": "",
+  "source": "Community Example",
+  "type": "doctor recommendation",
+  "category": "Utah (UT)",
+  "subcategory": "HHT",
+  "tags": ["doctor", "ut", "hht", "example"]
+}
